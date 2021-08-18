@@ -6,8 +6,8 @@ let config = {
 	devtool: false,
 	output: {
 		path: path.resolve(__dirname, "dist"),
-		filename: "hollywood.js",
-		library: "hollywood",
+		filename: "yaem.js",
+		library: "yaem",
 	},
 	resolve: {
 		modules: [path.resolve(__dirname, "src"), "node_modules"],
