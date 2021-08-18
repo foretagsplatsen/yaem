@@ -1,3 +1,5 @@
+import event from "./event";
+
 /**
  * Keeps a list of events.
  */
