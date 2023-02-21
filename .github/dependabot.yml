@@ -1,0 +1,7 @@
+# https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates#open-pull-requests-limit
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    open-pull-requests-limit: 1000 # we don't want to limit PRs
+    commit-message:
+      prefix: "15549487: "
