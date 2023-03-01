@@ -2,6 +2,9 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
+    directory: "/"
     open-pull-requests-limit: 1000 # we don't want to limit PRs
+    schedule:
+      interval: "daily" # runs on every weekday, Monday to Friday
     commit-message:
       prefix: "15549487: "
