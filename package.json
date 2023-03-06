@@ -13,7 +13,7 @@
         "electron": "^23.1.1",
         "eslint": "^8.35.0",
         "eslint-config-ftgp": "^2.1.1",
-        "eslint-config-prettier": "^8.6.0",
+        "eslint-config-prettier": "^8.7.0",
         "eslint-import-resolver-webpack": "^0.13.2",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-prettier": "^4.2.1",
