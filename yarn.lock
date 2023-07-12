@@ -1157,10 +1157,10 @@ eslint-plugin-promise@^6.0.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-6.1.1.tgz#269a3e2772f62875661220631bd4dafcb4083816"
   integrity sha512-tjqWDwVZQo7UIPMeDReOpUgHCmCiH+ePnVT+5zVapL0uuHnegBUs2smM13CzOs2Xb5+MHMRFTs9v24yjba4Oig==
 
-eslint-plugin-sort-class-members@^1.16.0:
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-sort-class-members/-/eslint-plugin-sort-class-members-1.16.0.tgz#e47596d867a57713571f040024c03fe674dec3fc"
-  integrity sha512-8l0IqUmoupk9PvO5D4I5zJqirVe9sax5Hpfv9xQmnrSpLYkc8BSYGnUjuHGMSSe4jKuC73NIr38kQv1tPbO+Xg==
+eslint-plugin-sort-class-members@^1.18.0:
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-sort-class-members/-/eslint-plugin-sort-class-members-1.18.0.tgz#561746eb30abc4e8bb8d582d359c652299e450d8"
+  integrity sha512-y4r5OC3LJNHJZCWfVwFnnRiNrQ/LRf7Pb1wD6/CP8Y4qmUvjtmkwrLvyY755p8SFTOOXVd33HgFuF3XxVW1xbg==
 
 eslint-scope@5.1.1:
   version "5.1.1"
