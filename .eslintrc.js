@@ -2,7 +2,7 @@
 	module.exports = {
 		root: true,
 		extends: [
-			"ftgp",
+			"plugin:@foretagsplatsen/eslint-plugin-ftgp/main",
 			"plugin:prettier/recommended",
 			"plugin:import/recommended",
 		],
