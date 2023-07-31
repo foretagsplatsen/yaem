@@ -25,7 +25,7 @@
         "karma-electron-launcher": "^0.3.0",
         "karma-jasmine": "^5.1.0",
         "karma-webpack": "^5.0.0",
-        "prettier": "^2.8.8",
+        "prettier": "^3.0.0",
         "webpack": "^5.88.1",
         "webpack-cli": "^5.1.4"
     }
