@@ -43,7 +43,7 @@ export default function eventCategory() {
 	that.on = function (name, callback) {
 		// eslint-disable-next-line no-console
 		console.warn(
-			"Sending on() to a category is deprecated. Send register() instead."
+			"Sending on() to a category is deprecated. Send register() instead.",
 		);
 
 		return that.register(name, callback);
@@ -68,7 +68,7 @@ export default function eventCategory() {
 	that.off = function (name, binding) {
 		// eslint-disable-next-line no-console
 		console.warn(
-			"Sending off() to a category is deprecated. Send unregister() instead."
+			"Sending off() to a category is deprecated. Send unregister() instead.",
 		);
 
 		return that.unregister(name, binding);
@@ -94,7 +94,7 @@ export default function eventCategory() {
 	that.onceOn = function (name, callback) {
 		// eslint-disable-next-line no-console
 		console.warn(
-			"Sending onceOn() to a category is deprecated. Send registerOnce() instead."
+			"Sending onceOn() to a category is deprecated. Send registerOnce() instead.",
 		);
 
 		return that.registerOnce(name, callback);

@@ -13,7 +13,7 @@ export default function event(spec, my) {
 	function that(callback) {
 		// eslint-disable-next-line no-console
 		console.warn(
-			"Using an event as a function is deprecated. Send register() to the event instead."
+			"Using an event as a function is deprecated. Send register() to the event instead.",
 		);
 
 		return that.register(callback);
@@ -33,7 +33,7 @@ export default function event(spec, my) {
 	that.on = function (callback) {
 		// eslint-disable-next-line no-console
 		console.warn(
-			"Sending on() to an event is deprecated. Send register() instead."
+			"Sending on() to an event is deprecated. Send register() instead.",
 		);
 
 		return that.register(callback);
@@ -128,7 +128,7 @@ export default function event(spec, my) {
 	that.onceOn = function (callback) {
 		// eslint-disable-next-line no-console
 		console.warn(
-			"Sending onceOn() to an event is deprecated. Send registerOnce() instead."
+			"Sending onceOn() to an event is deprecated. Send registerOnce() instead.",
 		);
 
 		return that.registerOnce(callback);
@@ -161,7 +161,7 @@ export default function event(spec, my) {
 	that.off = function (binding) {
 		// eslint-disable-next-line no-console
 		console.warn(
-			"Sending off() to an event is deprecated. Send unregister() instead."
+			"Sending off() to an event is deprecated. Send unregister() instead.",
 		);
 
 		that.unregister(binding);
@@ -222,7 +222,7 @@ export default function event(spec, my) {
 	 */
 	function bindCallback(callback) {
 		let binding = bindings.filter((binding) =>
-			binding.isForCallback(callback)
+			binding.isForCallback(callback),
 		)[0];
 
 		// Don't register the same callback twice:
