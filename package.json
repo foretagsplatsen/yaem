@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "@foretagsplatsen/eslint-plugin-ftgp": "^2.1.1",
-        "electron": "^25.5.0",
+        "electron": "^26.0.0",
         "eslint": "^8.46.0",
         "eslint-config-ftgp": "^2.1.1",
         "eslint-config-prettier": "^9.0.0",
