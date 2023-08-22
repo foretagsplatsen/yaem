@@ -19,7 +19,7 @@
         "eslint-plugin-import": "^2.28.1",
         "eslint-plugin-prettier": "^5.0.0",
         "eslint-plugin-sort-class-members": "^1.18.0",
-        "jasmine": "^4.5.0",
+        "jasmine": "^5.1.0",
         "karma": "^6.4.2",
         "karma-electron": "^7.3.0",
         "karma-electron-launcher": "^0.3.0",
