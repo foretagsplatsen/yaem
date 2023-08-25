@@ -1,4 +1,4 @@
-import eventCategory from "./eventCategory";
+import eventCategory from "./eventCategory.js";
 
 /**
  * Singleton object that keeps a list of named event categories.
