@@ -2,6 +2,7 @@
   "name": "yaem",
   "version": "0.1.0",
   "description": "Event manager",
+  "type": "module",
   "main": "index.js",
   "author": "finsit",
   "license": "MIT",
