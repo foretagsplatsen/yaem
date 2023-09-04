@@ -1,6 +1,6 @@
-import event from "../src/event";
-import eventCategory from "../src/eventCategory";
-import events from "../src/eventManager";
+import event from "../src/event.js";
+import eventCategory from "../src/eventCategory.js";
+import events from "../src/eventManager.js";
 
 describe("events", () => {
 	it("Bind callback to event", () => {
