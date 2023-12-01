@@ -1,14 +1,10 @@
 module.exports = {
   root: true,
-  extends: [
-    "plugin:@foretagsplatsen/eslint-plugin-ftgp/main",
-    "plugin:prettier/recommended",
-    "plugin:import/recommended",
-  ],
+  extends: ["plugin:@foretagsplatsen/main", "plugin:prettier/recommended"],
   env: {
     es6: true,
   },
-  plugins: ["ftgp", "jasmine", "sort-class-members"],
+  plugins: ["@foretagsplatsen", "sort-class-members"],
   parserOptions: {
     sourceType: "module",
     ecmaVersion: 9,
@@ -39,10 +35,15 @@ module.exports = {
     "no-return-await": "error",
     "prefer-promise-reject-errors": "error",
     "require-await": "error",
-    "import/no-absolute-path": "error",
-    "import/no-self-import": "error",
-    "import/no-useless-path-segments": "error",
-    "import/no-cycle": "error",
+    "import/no-unused-modules": [
+      "error",
+      {
+        unusedExports: true,
+        missingExports: true,
+        // List of files not exporting anything:
+        ignoreExports: ["**/.eslintrc.cjs", "index.js", "webpack.config.js"],
+      },
+    ],
     "spaced-comment": [
       "error",
       "always",
