@@ -3,7 +3,7 @@ import eventCategory from "./eventCategory.js";
 /**
  * Singleton object that keeps a list of named event categories.
  */
-let eventManager = (function () {
+const eventManager = (function () {
 	let that = {};
 
 	// Map of event categories with (category) name as key
