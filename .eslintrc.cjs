@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ["plugin:@foretagsplatsen/main", "plugin:prettier/recommended"],
+  extends: ["plugin:@foretagsplatsen/main"],
   env: {
     es6: true,
   },
