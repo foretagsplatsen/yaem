@@ -13,7 +13,7 @@
     "test": "jasmine --config=jasmine.json"
   },
   "devDependencies": {
-    "@foretagsplatsen/eslint-plugin": "^3.0.0",
+    "@foretagsplatsen/eslint-plugin": "^4.0.1",
     "electron": "^28.0.0",
     "eslint": "^8.55.0",
     "eslint-config-ftgp": "^2.1.1",
