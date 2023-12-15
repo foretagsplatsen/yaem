@@ -5,10 +5,6 @@ module.exports = {
     es6: true,
   },
   plugins: ["@foretagsplatsen", "sort-class-members"],
-  parserOptions: {
-    sourceType: "module",
-    ecmaVersion: 9,
-  },
   rules: {
     "prefer-object-spread": "error",
     "prefer-arrow-callback": "error",
