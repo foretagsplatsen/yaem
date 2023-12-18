@@ -16,7 +16,6 @@
     "@foretagsplatsen/eslint-plugin": "^4.1.0",
     "electron": "^28.0.0",
     "eslint": "^8.55.0",
-    "eslint-config-ftgp": "^2.1.1",
     "eslint-plugin-sort-class-members": "^1.19.0",
     "jasmine": "^5.1.0"
   }
