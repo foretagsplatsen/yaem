@@ -659,15 +659,6 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
-eslint-config-ftgp@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-ftgp/-/eslint-config-ftgp-2.1.1.tgz#f214fd4005437f02ace646b6eb537fb91e613afb"
-  integrity sha512-VqMYWzQNAcBrDUWM6tIxRxfsz2v4kEBAaLoBHz4o5O4+xah46MXlG6EupPBFmTustRD6Y+Sf3rbqcFZdOQ2ieA==
-  dependencies:
-    eslint-plugin-ftgp "^3.0.0"
-    eslint-plugin-jasmine "^4.1.3"
-    eslint-plugin-promise "^6.0.0"
-
 eslint-config-prettier@^9.1.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-9.1.0.tgz#31af3d94578645966c082fcb71a5846d3c94867f"
@@ -695,13 +686,6 @@ eslint-module-utils@^2.8.0:
   integrity sha512-aWajIYfsqCKRDgUfjEXNN/JlrzauMuSEy5sbd7WXbtW3EH6A6MpwEh42c7qD+MqQo9QMJ6fWLAeIJynx0g6OAw==
   dependencies:
     debug "^3.2.7"
-
-eslint-plugin-ftgp@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-ftgp/-/eslint-plugin-ftgp-3.0.0.tgz#a67521b1266d2a1a741eaf4b288700f25dbcb16e"
-  integrity sha512-zZ+lvPPaYxqcDC5SQT4p3mU/d7icYwfvDGML45egdxs0Z118R57uAid556bec34NDmnXjNhIQWE7RdOAPEWA5A==
-  dependencies:
-    requireindex "~1.2.0"
 
 eslint-plugin-import@^2.29.0:
   version "2.29.0"
@@ -1838,11 +1822,6 @@ regexp.prototype.flags@^1.5.1:
     call-bind "^1.0.2"
     define-properties "^1.2.0"
     set-function-name "^2.0.0"
-
-requireindex@~1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/requireindex/-/requireindex-1.2.0.tgz#3463cdb22ee151902635aa6c9535d4de9c2ef1ef"
-  integrity sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==
 
 resolve-alpn@^1.0.0:
   version "1.2.1"
