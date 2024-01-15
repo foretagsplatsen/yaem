@@ -118,6 +118,7 @@ export default function eventCategory() {
 	 */
 	that.trigger = function (name) {
 		let params = Array.prototype.slice.call(arguments, 1);
+		// eslint-disable-next-line no-shadow -- we should fix that later
 		let event = ensureEventHolderFor(name);
 		event.trigger.apply(that, params);
 	};
@@ -126,6 +127,7 @@ export default function eventCategory() {
 	 * Dispose all events.
 	 */
 	that.dispose = function () {
+		// eslint-disable-next-line no-shadow -- we should fix that later
 		events.forEach((event) => {
 			event.dispose();
 		});
@@ -149,6 +151,7 @@ export default function eventCategory() {
 	 * @param [name] {string}
 	 * @returns {event}
 	 */
+	// eslint-disable-next-line no-shadow -- we should fix that later
 	function addEvent(event, name) {
 		events.push(event);
 		if (name) {
