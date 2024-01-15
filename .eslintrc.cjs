@@ -8,7 +8,6 @@ module.exports = {
 	env: {
 		es6: true,
 	},
-	plugins: ["sort-class-members"],
 	rules: {
 		"import/no-unused-modules": [
 			"error",
