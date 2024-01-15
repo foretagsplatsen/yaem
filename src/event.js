@@ -7,7 +7,7 @@
  * @returns {event}
  */
 export default function event(spec, my) {
-	my = my || {};
+	my ||= {};
 
 	// DEPRECATED: use that.register() instead.
 	function that(callback) {
@@ -60,7 +60,7 @@ export default function event(spec, my) {
 	 * @returns {eventBinding}
 	 */
 	function eventBinding(spec) {
-		spec = spec || {};
+		spec ||= {};
 		let that = {};
 
 		let callback = spec.callback;
