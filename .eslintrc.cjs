@@ -8,7 +8,7 @@ module.exports = {
 	env: {
 		es6: true,
 	},
-	plugins: ["@foretagsplatsen", "sort-class-members"],
+	plugins: ["sort-class-members"],
 	rules: {
 		"import/no-unused-modules": [
 			"error",
