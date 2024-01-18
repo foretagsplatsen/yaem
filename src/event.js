@@ -7,7 +7,7 @@
  * @returns {event}
  */
 export default function event(spec, my) {
-	my = my || {};
+	my ||= {};
 
 	// DEPRECATED: use that.register() instead.
 	function that(callback) {
@@ -59,11 +59,14 @@ export default function event(spec, my) {
 
 	 * @returns {eventBinding}
 	 */
+	// eslint-disable-next-line no-shadow -- we should fix that later
 	function eventBinding(spec) {
-		spec = spec || {};
+		spec ||= {};
+		// eslint-disable-next-line no-shadow -- we should fix that later
 		let that = {};
 
 		let callback = spec.callback;
+		// eslint-disable-next-line no-shadow -- we should fix that later
 		let event = spec.event;
 
 		/**
@@ -221,6 +224,7 @@ export default function event(spec, my) {
 	 * @returns {eventBinding}
 	 */
 	function bindCallback(callback) {
+		// eslint-disable-next-line no-shadow -- we should fix that later
 		let binding = bindings.filter((binding) =>
 			binding.isForCallback(callback),
 		)[0];
