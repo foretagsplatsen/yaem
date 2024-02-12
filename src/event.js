@@ -225,9 +225,9 @@ export default function event(spec, my) {
 	 */
 	function bindCallback(callback) {
 		// eslint-disable-next-line no-shadow -- we should fix that later
-		let binding = bindings.filter((binding) =>
+		let binding = bindings.find((binding) =>
 			binding.isForCallback(callback),
-		)[0];
+		);
 
 		// Don't register the same callback twice:
 		if (binding) {
