@@ -9,19 +9,11 @@
 export default function event(spec, my) {
 	my ||= {};
 
-	// DEPRECATED: use that.register() instead.
-	function that(callback) {
-		// eslint-disable-next-line no-console
-		console.warn(
-			"Using an event as a function is deprecated. Send register() to the event instead.",
-		);
-
-		return that.register(callback);
-	}
-
 	let bindings = [];
 
 	// #### Public API
+
+	let that = {};
 
 	/**
 	 * Binds callback to event. The callback will be invoked whenever the event is fired.
