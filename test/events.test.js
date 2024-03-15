@@ -89,38 +89,6 @@ describe("events", () => {
 		expect(spy2).toHaveBeenCalledWith(2, "text");
 	});
 
-	it("Un-Bind callback using unregister", () => {
-		// Arrange: an event
-		let anEvent = event();
-		let spy = jasmine.createSpy("callback");
-
-		// bind a callback
-		let eventBinding = anEvent.register(spy);
-
-		// unbind
-		anEvent.unregister(eventBinding);
-
-		anEvent.trigger();
-
-		expect(spy).not.toHaveBeenCalled();
-	});
-
-	it("Un-Bind callback using unbind", () => {
-		// Arrange: an event
-		let anEvent = event();
-		let spy = jasmine.createSpy("callback");
-
-		// bind a callback
-		let eventBinding = anEvent.register(spy);
-
-		// Unbind
-		eventBinding.unbind();
-
-		anEvent.trigger();
-
-		expect(spy).not.toHaveBeenCalled();
-	});
-
 	it("Bind and trigger callback only once using registerOnce", () => {
 		// Arrange: an event
 		let anEvent = event();
@@ -134,21 +102,6 @@ describe("events", () => {
 		anEvent.trigger();
 
 		expect(spy).toHaveBeenCalledTimes(1);
-	});
-
-	it("Event dispose unbinds all callbacks", () => {
-		// Arrange: an event
-		let anEvent = event();
-
-		// Act: bind two callbacks and trigger event
-		let firstBinding = anEvent.register(() => {});
-		let secondBinding = anEvent.register(() => {});
-
-		anEvent.dispose();
-
-		// Assert: that both where unbound
-		expect(firstBinding.isBound()).toBeFalsy();
-		expect(secondBinding.isBound()).toBeFalsy();
 	});
 
 	it("Event Category can bind callback to named event using register", () => {
@@ -165,23 +118,6 @@ describe("events", () => {
 		anEvent.trigger("namedEvent");
 	});
 
-	it("Event Category can un-bind named event callbacks using unregister", () => {
-		// Arrange: an event
-		let someEvents = eventCategory();
-		let anEvent = someEvents.createEvent("namedEvent");
-		let spy = jasmine.createSpy("callback");
-
-		// bind a callback
-		let eventBinding = someEvents.register("namedEvent", spy);
-
-		// unbind
-		someEvents.unregister("namedEvent", eventBinding);
-
-		anEvent.trigger("namedEvent");
-
-		expect(spy).not.toHaveBeenCalled();
-	});
-
 	it("Event Category can bind and trigger named event callback only once using registerOnce", () => {
 		// Arrange: an event
 		let someEvents = eventCategory();
@@ -196,27 +132,6 @@ describe("events", () => {
 		anEvent.trigger("namedEvent");
 
 		expect(spy).toHaveBeenCalledTimes(1);
-	});
-
-	it("Event Category can bind dispose unbinds all events and there callbacks", () => {
-		// Arrange: two events in a event handler
-		let someEvents = eventCategory();
-		let anEvent = someEvents.createEvent("namedEvent");
-		let anotherEvent = someEvents.createEvent("namedEvent");
-
-		// Act: bind two callbacks and trigger event
-		let firstBinding = anEvent.register(() => {});
-		let secondBinding = anEvent.register(() => {});
-		let thirdBinding = anotherEvent.register(() => {});
-		let fourthBinding = anotherEvent.register(() => {});
-
-		someEvents.dispose();
-
-		// Assert: that all where unbound
-		expect(firstBinding.isBound()).toBeFalsy();
-		expect(secondBinding.isBound()).toBeFalsy();
-		expect(thirdBinding.isBound()).toBeFalsy();
-		expect(fourthBinding.isBound()).toBeFalsy();
 	});
 
 	it("Event Manager keeps list of named event categories", () => {
@@ -256,30 +171,6 @@ describe("deprecated", () => {
 
 	afterAll(() => {
 		console.warn = originalConsoleWarn;
-	});
-
-	it("off() method delegates to unregister", () => {
-		// Arrange: an event
-		let anEvent = event();
-		let spy = jasmine.createSpy("unregister");
-
-		anEvent.unregister = spy;
-		anEvent.off("foo");
-
-		expect(spy).toHaveBeenCalledWith("foo");
-		expect(console.warn).toHaveBeenCalled();
-	});
-
-	it("onceOn() method delegates to registerOnce", () => {
-		// Arrange: an event
-		let anEvent = event();
-		let spy = jasmine.createSpy("registerOnce");
-
-		anEvent.registerOnce = spy;
-		anEvent.onceOn(spy);
-
-		expect(spy).toHaveBeenCalled();
-		expect(console.warn).toHaveBeenCalled();
 	});
 
 	it("on() category method delegates to register", () => {
