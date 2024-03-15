@@ -261,33 +261,3 @@ describe("events", () => {
 		expect(triggered).toBeTruthy();
 	});
 });
-
-describe("deprecated", () => {
-	/* eslint-disable no-console */
-	let originalConsoleWarn;
-
-	beforeEach(() => {
-		console.warn = jasmine.createSpy("console.warn");
-	});
-
-	beforeAll(() => {
-		originalConsoleWarn = console.warn;
-	});
-
-	afterAll(() => {
-		console.warn = originalConsoleWarn;
-	});
-
-	it("onceOn() category method delegates to registerOnce", () => {
-		// Arrange: an event
-		let someEvents = eventCategory();
-		let spy = jasmine.createSpy("registerOnce");
-
-		someEvents.registerOnce = spy;
-
-		someEvents.onceOn("namedEvent", "something else");
-
-		expect(spy).toHaveBeenCalledWith("namedEvent", "something else");
-		expect(console.warn).toHaveBeenCalled();
-	});
-});
