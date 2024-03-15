@@ -100,22 +100,6 @@ export default function event(spec, my) {
 	/**
 	 * Like on() except callback will only be fired once
 	 *
-	 * @deprecated use registerOnce() instead
-	 * @param callback {function}
-	 * @returns {eventBinding}
-	 */
-	that.onceOn = function (callback) {
-		// eslint-disable-next-line no-console
-		console.warn(
-			"Sending onceOn() to an event is deprecated. Send registerOnce() instead.",
-		);
-
-		return that.registerOnce(callback);
-	};
-
-	/**
-	 * Like on() except callback will only be fired once
-	 *
 	 * @param callback {function}
 	 * @returns {eventBinding}
 	 */
