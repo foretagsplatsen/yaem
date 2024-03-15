@@ -45,21 +45,6 @@ export default function eventCategory() {
 
 	/**
 	 * Removed "binding" attached to event.
-	 * @deprecated use unregister() instead
-	 * @param name {String} Name of event
-	 * @param binding {eventBinding} Binding
-	 */
-	that.off = function (name, binding) {
-		// eslint-disable-next-line no-console
-		console.warn(
-			"Sending off() to a category is deprecated. Send unregister() instead.",
-		);
-
-		return that.unregister(name, binding);
-	};
-
-	/**
-	 * Removed "binding" attached to event.
 	 * @param name {String} Name of event
 	 * @param binding {eventBinding} Binding
 	 */
