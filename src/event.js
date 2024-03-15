@@ -16,22 +16,6 @@ export default function event(spec, my) {
 	let that = {};
 
 	/**
-	 * Binds callback to event. The callback will be invoked whenever the event is fired.
-	 *
-	 * @deprecated use that.register() instead.
-	 * @param callback {function}
-	 * @returns {eventBinding}
-	 */
-	that.on = function (callback) {
-		// eslint-disable-next-line no-console
-		console.warn(
-			"Sending on() to an event is deprecated. Send register() instead.",
-		);
-
-		return that.register(callback);
-	};
-
-	/**
 	 * Binds callback to event. The callback will be invoked
 	 * whenever the event is fired. Avoid adding the same callback
 	 * twice.

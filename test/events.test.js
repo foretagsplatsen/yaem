@@ -151,26 +151,6 @@ describe("events", () => {
 		expect(secondBinding.isBound()).toBeFalsy();
 	});
 
-	it("Event Category keeps a list of events", () => {
-		// Act: create an event handler ans some events
-		let someEvents = eventCategory();
-		let anEvent = someEvents.createEvent();
-		let anotherEvent = someEvents.createEvent();
-
-		// Assert: events created
-		expect(anEvent.on).toBeTruthy();
-		expect(anotherEvent.on).toBeTruthy();
-	});
-
-	it("Event Category can keep named events", () => {
-		// Act: create an event handler ans some events
-		let someEvents = eventCategory();
-		let anEvent = someEvents.createEvent("namedEvent");
-
-		// Assert: events created
-		expect(anEvent.on).toBeTruthy();
-	});
-
 	it("Event Category can bind callback to named event using register", () => {
 		// Arrange: an event
 		let someEvents = eventCategory();
@@ -276,18 +256,6 @@ describe("deprecated", () => {
 
 	afterAll(() => {
 		console.warn = originalConsoleWarn;
-	});
-
-	it("on() method delegates to register", () => {
-		// Arrange: an event
-		let anEvent = event();
-		let spy = jasmine.createSpy("register");
-
-		anEvent.register = spy;
-		anEvent.on("foo");
-
-		expect(spy).toHaveBeenCalledWith("foo");
-		expect(console.warn).toHaveBeenCalled();
 	});
 
 	it("off() method delegates to unregister", () => {
