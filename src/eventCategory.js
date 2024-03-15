@@ -36,22 +36,6 @@ export default function eventCategory() {
 	/**
 	 * Binds callback to a named event. The callback will be invoked whenever the event is fired.
 	 *
-	 * @deprecated use register() instead
-	 * @param name {String}
-	 * @param callback {function}
-	 */
-	that.on = function (name, callback) {
-		// eslint-disable-next-line no-console
-		console.warn(
-			"Sending on() to a category is deprecated. Send register() instead.",
-		);
-
-		return that.register(name, callback);
-	};
-
-	/**
-	 * Binds callback to a named event. The callback will be invoked whenever the event is fired.
-	 *
 	 * @param name {String}
 	 * @param callback {function}
 	 */
