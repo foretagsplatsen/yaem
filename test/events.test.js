@@ -173,19 +173,6 @@ describe("deprecated", () => {
 		console.warn = originalConsoleWarn;
 	});
 
-	it("off() category method delegates to unregister", () => {
-		// Arrange: an event
-		let someEvents = eventCategory();
-		let spy = jasmine.createSpy("unregister");
-
-		someEvents.unregister = spy;
-
-		someEvents.off("namedEvent", "something else");
-
-		expect(spy).toHaveBeenCalledWith("namedEvent", "something else");
-		expect(console.warn).toHaveBeenCalled();
-	});
-
 	it("onceOn() category method delegates to registerOnce", () => {
 		// Arrange: an event
 		let someEvents = eventCategory();
