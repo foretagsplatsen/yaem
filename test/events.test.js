@@ -158,8 +158,8 @@ describe("events", () => {
 		let anotherEvent = someEvents.createEvent();
 
 		// Assert: events created
-		expect(anEvent.on).toBeTruthy();
-		expect(anotherEvent.on).toBeTruthy();
+		expect(anEvent.register).toBeTruthy();
+		expect(anotherEvent.register).toBeTruthy();
 	});
 
 	it("Event Category can keep named events", () => {
@@ -168,7 +168,7 @@ describe("events", () => {
 		let anEvent = someEvents.createEvent("namedEvent");
 
 		// Assert: events created
-		expect(anEvent.on).toBeTruthy();
+		expect(anEvent.register).toBeTruthy();
 	});
 
 	it("Event Category can bind callback to named event using register", () => {
