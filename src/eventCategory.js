@@ -55,23 +55,6 @@ export default function eventCategory() {
 	/**
 	 * Like on() except callback will only be fired once
 	 *
-	 * @deprecated use registerOnce() instead
-	 * @param name
-	 * @param callback
-	 * @returns {*}
-	 */
-	that.onceOn = function (name, callback) {
-		// eslint-disable-next-line no-console
-		console.warn(
-			"Sending onceOn() to a category is deprecated. Send registerOnce() instead.",
-		);
-
-		return that.registerOnce(name, callback);
-	};
-
-	/**
-	 * Like on() except callback will only be fired once
-	 *
 	 * @param name
 	 * @param callback
 	 * @returns {*}
