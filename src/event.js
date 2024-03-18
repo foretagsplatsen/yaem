@@ -9,35 +9,11 @@
 export default function event(spec, my) {
 	my ||= {};
 
-	// DEPRECATED: use that.register() instead.
-	function that(callback) {
-		// eslint-disable-next-line no-console
-		console.warn(
-			"Using an event as a function is deprecated. Send register() to the event instead.",
-		);
-
-		return that.register(callback);
-	}
-
 	let bindings = [];
 
 	// #### Public API
 
-	/**
-	 * Binds callback to event. The callback will be invoked whenever the event is fired.
-	 *
-	 * @deprecated use that.register() instead.
-	 * @param callback {function}
-	 * @returns {eventBinding}
-	 */
-	that.on = function (callback) {
-		// eslint-disable-next-line no-console
-		console.warn(
-			"Sending on() to an event is deprecated. Send register() instead.",
-		);
-
-		return that.register(callback);
-	};
+	let that = {};
 
 	/**
 	 * Binds callback to event. The callback will be invoked
@@ -124,22 +100,6 @@ export default function event(spec, my) {
 	/**
 	 * Like on() except callback will only be fired once
 	 *
-	 * @deprecated use registerOnce() instead
-	 * @param callback {function}
-	 * @returns {eventBinding}
-	 */
-	that.onceOn = function (callback) {
-		// eslint-disable-next-line no-console
-		console.warn(
-			"Sending onceOn() to an event is deprecated. Send registerOnce() instead.",
-		);
-
-		return that.registerOnce(callback);
-	};
-
-	/**
-	 * Like on() except callback will only be fired once
-	 *
 	 * @param callback {function}
 	 * @returns {eventBinding}
 	 */
@@ -153,21 +113,6 @@ export default function event(spec, my) {
 
 		bindings.push(onceBinding);
 		return onceBinding;
-	};
-
-	/**
-	 * Removed "binding" attached to event.
-	 * @deprecated use unregister() instead
-	 * @param name {String} Name of event
-	 * @param binding {eventBinding} Binding
-	 */
-	that.off = function (binding) {
-		// eslint-disable-next-line no-console
-		console.warn(
-			"Sending off() to an event is deprecated. Send unregister() instead.",
-		);
-
-		that.unregister(binding);
 	};
 
 	/**

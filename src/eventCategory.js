@@ -36,22 +36,6 @@ export default function eventCategory() {
 	/**
 	 * Binds callback to a named event. The callback will be invoked whenever the event is fired.
 	 *
-	 * @deprecated use register() instead
-	 * @param name {String}
-	 * @param callback {function}
-	 */
-	that.on = function (name, callback) {
-		// eslint-disable-next-line no-console
-		console.warn(
-			"Sending on() to a category is deprecated. Send register() instead.",
-		);
-
-		return that.register(name, callback);
-	};
-
-	/**
-	 * Binds callback to a named event. The callback will be invoked whenever the event is fired.
-	 *
 	 * @param name {String}
 	 * @param callback {function}
 	 */
@@ -61,43 +45,11 @@ export default function eventCategory() {
 
 	/**
 	 * Removed "binding" attached to event.
-	 * @deprecated use unregister() instead
-	 * @param name {String} Name of event
-	 * @param binding {eventBinding} Binding
-	 */
-	that.off = function (name, binding) {
-		// eslint-disable-next-line no-console
-		console.warn(
-			"Sending off() to a category is deprecated. Send unregister() instead.",
-		);
-
-		return that.unregister(name, binding);
-	};
-
-	/**
-	 * Removed "binding" attached to event.
 	 * @param name {String} Name of event
 	 * @param binding {eventBinding} Binding
 	 */
 	that.unregister = function (name, binding) {
 		return ensureEventHolderFor(name).unregister(binding);
-	};
-
-	/**
-	 * Like on() except callback will only be fired once
-	 *
-	 * @deprecated use registerOnce() instead
-	 * @param name
-	 * @param callback
-	 * @returns {*}
-	 */
-	that.onceOn = function (name, callback) {
-		// eslint-disable-next-line no-console
-		console.warn(
-			"Sending onceOn() to a category is deprecated. Send registerOnce() instead.",
-		);
-
-		return that.registerOnce(name, callback);
 	};
 
 	/**

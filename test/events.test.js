@@ -158,8 +158,8 @@ describe("events", () => {
 		let anotherEvent = someEvents.createEvent();
 
 		// Assert: events created
-		expect(anEvent.on).toBeTruthy();
-		expect(anotherEvent.on).toBeTruthy();
+		expect(anEvent.register).toBeTruthy();
+		expect(anotherEvent.register).toBeTruthy();
 	});
 
 	it("Event Category can keep named events", () => {
@@ -168,7 +168,7 @@ describe("events", () => {
 		let anEvent = someEvents.createEvent("namedEvent");
 
 		// Assert: events created
-		expect(anEvent.on).toBeTruthy();
+		expect(anEvent.register).toBeTruthy();
 	});
 
 	it("Event Category can bind callback to named event using register", () => {
@@ -259,109 +259,5 @@ describe("events", () => {
 		events.at("c1").trigger("foo");
 
 		expect(triggered).toBeTruthy();
-	});
-});
-
-describe("deprecated", () => {
-	/* eslint-disable no-console */
-	let originalConsoleWarn;
-
-	beforeEach(() => {
-		console.warn = jasmine.createSpy("console.warn");
-	});
-
-	beforeAll(() => {
-		originalConsoleWarn = console.warn;
-	});
-
-	afterAll(() => {
-		console.warn = originalConsoleWarn;
-	});
-
-	it("on() method delegates to register", () => {
-		// Arrange: an event
-		let anEvent = event();
-		let spy = jasmine.createSpy("register");
-
-		anEvent.register = spy;
-		anEvent.on("foo");
-
-		expect(spy).toHaveBeenCalledWith("foo");
-		expect(console.warn).toHaveBeenCalled();
-	});
-
-	it("'using an event as a function' delegates to register", () => {
-		// Arrange: an event
-		let anEvent = event();
-		let spy = jasmine.createSpy("register");
-
-		anEvent.register = spy;
-		anEvent("foo");
-
-		expect(spy).toHaveBeenCalledWith("foo");
-		expect(console.warn).toHaveBeenCalled();
-	});
-
-	it("off() method delegates to unregister", () => {
-		// Arrange: an event
-		let anEvent = event();
-		let spy = jasmine.createSpy("unregister");
-
-		anEvent.unregister = spy;
-		anEvent.off("foo");
-
-		expect(spy).toHaveBeenCalledWith("foo");
-		expect(console.warn).toHaveBeenCalled();
-	});
-
-	it("onceOn() method delegates to registerOnce", () => {
-		// Arrange: an event
-		let anEvent = event();
-		let spy = jasmine.createSpy("registerOnce");
-
-		anEvent.registerOnce = spy;
-		anEvent.onceOn(spy);
-
-		expect(spy).toHaveBeenCalled();
-		expect(console.warn).toHaveBeenCalled();
-	});
-
-	it("on() category method delegates to register", () => {
-		// Arrange: an event
-		let someEvents = eventCategory();
-		let spy = jasmine.createSpy("register");
-
-		someEvents.register = spy;
-
-		someEvents.on("namedEvent", "something else");
-
-		expect(spy).toHaveBeenCalledWith("namedEvent", "something else");
-		expect(console.warn).toHaveBeenCalled();
-	});
-
-	it("off() category method delegates to unregister", () => {
-		// Arrange: an event
-		let someEvents = eventCategory();
-		let spy = jasmine.createSpy("unregister");
-
-		someEvents.unregister = spy;
-
-		someEvents.off("namedEvent", "something else");
-
-		expect(spy).toHaveBeenCalledWith("namedEvent", "something else");
-		expect(console.warn).toHaveBeenCalled();
-	});
-
-	it("onceOn() category method delegates to registerOnce", () => {
-		// Arrange: an event
-		let someEvents = eventCategory();
-		let spy = jasmine.createSpy("registerOnce");
-
-		someEvents.registerOnce = spy;
-
-		someEvents.onceOn("namedEvent", "something else");
-
-		expect(spy).toHaveBeenCalledWith("namedEvent", "something else");
-		expect(console.warn).toHaveBeenCalled();
 	});
 });
