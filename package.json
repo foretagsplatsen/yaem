@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@foretagsplatsen/eslint-plugin": "^6.0.0",
-    "electron": "^29.1.5",
+    "electron": "^29.1.6",
     "eslint": "^8.57.0",
     "jasmine": "^5.1.0"
   }
