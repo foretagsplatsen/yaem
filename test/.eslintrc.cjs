@@ -8,7 +8,11 @@ module.exports = {
 				unusedExports: true,
 				missingExports: true,
 				// List of files not exporting anything:
-				ignoreExports: [`${__dirname}/.eslintrc.cjs`, "**/*.test.js"],
+				ignoreExports: [
+					`${__dirname}/.eslintrc.cjs`,
+					`${__dirname}/setup.js`,
+					"**/*.test.js",
+				],
 			},
 		],
 	},

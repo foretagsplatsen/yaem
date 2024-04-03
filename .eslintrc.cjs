@@ -6,6 +6,7 @@ module.exports = {
 	env: {
 		es6: true,
 	},
+	ignorePatterns: ["coverage"],
 	rules: {
 		"import/no-unused-modules": [
 			"error",
@@ -13,7 +14,12 @@ module.exports = {
 				unusedExports: true,
 				missingExports: true,
 				// List of files not exporting anything:
-				ignoreExports: [`${__dirname}/.eslintrc.cjs`, "index.js"],
+				ignoreExports: [
+					`${__dirname}/.eslintrc.cjs`,
+					"index.js",
+					"babel.config.cjs",
+					"jest.config.mjs",
+				],
 			},
 		],
 	},
