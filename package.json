@@ -10,7 +10,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint --report-unused-disable-directives .",
-    "test": "jest"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "devDependencies": {
     "@foretagsplatsen/eslint-plugin": "^6.0.0",

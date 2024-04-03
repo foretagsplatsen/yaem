@@ -19,6 +19,10 @@ const config = {
 
 	// The directory where Jest should output its coverage files:
 	coverageDirectory: "coverage",
+
+	// Deactivate default transformers. This is useful to support ES
+	// modules:
+	transform: {},
 };
 
 export default config;
