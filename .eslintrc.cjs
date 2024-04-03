@@ -11,7 +11,11 @@ module.exports = {
 				unusedExports: true,
 				missingExports: true,
 				// List of files not exporting anything:
-				ignoreExports: ["**/.eslintrc.cjs", "index.js"],
+				ignoreExports: [
+					"**/.eslintrc.cjs",
+					"index.js",
+					"jest.config.mjs",
+				],
 			},
 		],
 	},
