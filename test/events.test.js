@@ -1,12 +1,13 @@
 import event from "../src/event.js";
 import eventCategory from "../src/eventCategory.js";
 import events from "../src/eventManager.js";
+import { jest } from "@jest/globals";
 
 describe("events", () => {
 	it("Bind callback to event", () => {
 		// Arrange: an event
 		let anEvent = event();
-		let spy = jasmine.createSpy("callback");
+		let spy = jest.fn();
 
 		// Act: bind a callback
 		anEvent.register(spy);
@@ -21,8 +22,8 @@ describe("events", () => {
 	it("Bind multiple callbacks to an event", () => {
 		// Arrange: an event
 		let anEvent = event();
-		let spy1 = jasmine.createSpy("callback1");
-		let spy2 = jasmine.createSpy("callback2");
+		let spy1 = jest.fn();
+		let spy2 = jest.fn();
 
 		// Act: bind two callbacks and trigger event
 		anEvent.register(spy1);
@@ -39,7 +40,7 @@ describe("events", () => {
 		// Arrange: an event
 		let anEvent = event();
 
-		let spy = jasmine.createSpy("callback");
+		let spy = jest.fn();
 
 		// Act: bind two callbacks and trigger event
 		anEvent.register(spy);
@@ -55,7 +56,7 @@ describe("events", () => {
 		// Arrange: an event
 		let anEvent = event();
 
-		let spy = jasmine.createSpy("callback");
+		let spy = jest.fn();
 
 		// Act: bind two callbacks and trigger event
 		anEvent.register(() => {
@@ -75,8 +76,8 @@ describe("events", () => {
 	it("Trigger pass values to callbacks", () => {
 		// Arrange: an event
 		let anEvent = event();
-		let spy1 = jasmine.createSpy("callback1");
-		let spy2 = jasmine.createSpy("callback2");
+		let spy1 = jest.fn();
+		let spy2 = jest.fn();
 
 		// Act: bind two callbacks and trigger event
 		anEvent.register(spy1);
@@ -92,7 +93,7 @@ describe("events", () => {
 	it("Un-Bind callback using unregister", () => {
 		// Arrange: an event
 		let anEvent = event();
-		let spy = jasmine.createSpy("callback");
+		let spy = jest.fn();
 
 		// bind a callback
 		let eventBinding = anEvent.register(spy);
@@ -108,7 +109,7 @@ describe("events", () => {
 	it("Un-Bind callback using unbind", () => {
 		// Arrange: an event
 		let anEvent = event();
-		let spy = jasmine.createSpy("callback");
+		let spy = jest.fn();
 
 		// bind a callback
 		let eventBinding = anEvent.register(spy);
@@ -124,7 +125,7 @@ describe("events", () => {
 	it("Bind and trigger callback only once using registerOnce", () => {
 		// Arrange: an event
 		let anEvent = event();
-		let spy = jasmine.createSpy("callback");
+		let spy = jest.fn();
 
 		// Act: bind a callback
 		anEvent.registerOnce(spy);
@@ -189,7 +190,7 @@ describe("events", () => {
 		// Arrange: an event
 		let someEvents = eventCategory();
 		let anEvent = someEvents.createEvent("namedEvent");
-		let spy = jasmine.createSpy("callback");
+		let spy = jest.fn();
 
 		// bind a callback
 		let eventBinding = someEvents.register("namedEvent", spy);
@@ -206,7 +207,7 @@ describe("events", () => {
 		// Arrange: an event
 		let someEvents = eventCategory();
 		let anEvent = someEvents.createEvent("namedEvent");
-		let spy = jasmine.createSpy("callback");
+		let spy = jest.fn();
 
 		// Act: bind a callback
 		someEvents.registerOnce("namedEvent", spy);
