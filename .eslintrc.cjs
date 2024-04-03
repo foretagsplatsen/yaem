@@ -11,11 +11,7 @@ module.exports = {
 				unusedExports: true,
 				missingExports: true,
 				// List of files not exporting anything:
-				ignoreExports: [
-					"**/.eslintrc.cjs",
-					"index.js",
-					"webpack.config.js",
-				],
+				ignoreExports: ["**/.eslintrc.cjs", "index.js"],
 			},
 		],
 	},
