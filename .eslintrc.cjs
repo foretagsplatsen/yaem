@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 module.exports = {
 	root: true,
 	extends: ["plugin:@foretagsplatsen/main"],
@@ -11,7 +13,7 @@ module.exports = {
 				unusedExports: true,
 				missingExports: true,
 				// List of files not exporting anything:
-				ignoreExports: ["**/.eslintrc.cjs", "index.js"],
+				ignoreExports: [`${__dirname}/.eslintrc.cjs`, "index.js"],
 			},
 		],
 	},
