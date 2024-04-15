@@ -1,6 +1,7 @@
 /* eslint-env node */
 
 module.exports = {
+	extends: ["plugin:@foretagsplatsen/jest"],
 	rules: {
 		"import/no-unused-modules": [
 			"error",
