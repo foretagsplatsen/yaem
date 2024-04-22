@@ -1,13 +1,13 @@
 import event from "../src/event.js";
 import eventCategory from "../src/eventCategory.js";
 import events from "../src/eventManager.js";
-import { describe, expect, it, jest } from "@jest/globals";
+import { expect, describe, it, vi } from "vitest";
 
 describe("events", () => {
 	it("bind callback to event", () => {
 		// Arrange: an event
 		let anEvent = event();
-		let spy = jest.fn();
+		let spy = vi.fn();
 
 		// Act: bind a callback
 		anEvent.register(spy);
@@ -22,8 +22,8 @@ describe("events", () => {
 	it("bind multiple callbacks to an event", () => {
 		// Arrange: an event
 		let anEvent = event();
-		let spy1 = jest.fn();
-		let spy2 = jest.fn();
+		let spy1 = vi.fn();
+		let spy2 = vi.fn();
 
 		// Act: bind two callbacks and trigger event
 		anEvent.register(spy1);
@@ -40,7 +40,7 @@ describe("events", () => {
 		// Arrange: an event
 		let anEvent = event();
 
-		let spy = jest.fn();
+		let spy = vi.fn();
 
 		// Act: bind two callbacks and trigger event
 		anEvent.register(spy);
@@ -56,7 +56,7 @@ describe("events", () => {
 		// Arrange: an event
 		let anEvent = event();
 
-		let spy = jest.fn();
+		let spy = vi.fn();
 
 		// Act: bind two callbacks and trigger event
 		anEvent.register(() => {
@@ -76,8 +76,8 @@ describe("events", () => {
 	it("trigger pass values to callbacks", () => {
 		// Arrange: an event
 		let anEvent = event();
-		let spy1 = jest.fn();
-		let spy2 = jest.fn();
+		let spy1 = vi.fn();
+		let spy2 = vi.fn();
 
 		// Act: bind two callbacks and trigger event
 		anEvent.register(spy1);
@@ -93,7 +93,7 @@ describe("events", () => {
 	it("un-Bind callback using unregister", () => {
 		// Arrange: an event
 		let anEvent = event();
-		let spy = jest.fn();
+		let spy = vi.fn();
 
 		// bind a callback
 		let eventBinding = anEvent.register(spy);
@@ -109,7 +109,7 @@ describe("events", () => {
 	it("un-Bind callback using unbind", () => {
 		// Arrange: an event
 		let anEvent = event();
-		let spy = jest.fn();
+		let spy = vi.fn();
 
 		// bind a callback
 		let eventBinding = anEvent.register(spy);
@@ -125,7 +125,7 @@ describe("events", () => {
 	it("bind and trigger callback only once using registerOnce", () => {
 		// Arrange: an event
 		let anEvent = event();
-		let spy = jest.fn();
+		let spy = vi.fn();
 
 		// Act: bind a callback
 		anEvent.registerOnce(spy);
@@ -192,7 +192,7 @@ describe("events", () => {
 		// Arrange: an event
 		let someEvents = eventCategory();
 		let anEvent = someEvents.createEvent("namedEvent");
-		let spy = jest.fn();
+		let spy = vi.fn();
 
 		// bind a callback
 		let eventBinding = someEvents.register("namedEvent", spy);
@@ -209,7 +209,7 @@ describe("events", () => {
 		// Arrange: an event
 		let someEvents = eventCategory();
 		let anEvent = someEvents.createEvent("namedEvent");
-		let spy = jest.fn();
+		let spy = vi.fn();
 
 		// Act: bind a callback
 		someEvents.registerOnce("namedEvent", spy);

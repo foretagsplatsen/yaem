@@ -1,7 +1,7 @@
 /* eslint-env node */
 
 module.exports = {
-	extends: ["plugin:@foretagsplatsen/jest"],
+	// extends: ["plugin:@foretagsplatsen/jest"],
 	rules: {
 		"import/no-unused-modules": [
 			"error",
@@ -9,11 +9,7 @@ module.exports = {
 				unusedExports: true,
 				missingExports: true,
 				// List of files not exporting anything:
-				ignoreExports: [
-					`${__dirname}/.eslintrc.cjs`,
-					`${__dirname}/setup.js`,
-					"**/*.test.js",
-				],
+				ignoreExports: [`${__dirname}/.eslintrc.cjs`, "**/*.test.js"],
 			},
 		],
 	},
