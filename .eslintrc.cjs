@@ -17,10 +17,15 @@ module.exports = {
 				ignoreExports: [
 					`${__dirname}/.eslintrc.cjs`,
 					"index.js",
-					"babel.config.cjs",
-					"jest.config.mjs",
+					"vitest.config.js",
 				],
 			},
 		],
+	},
+	settings: {
+		"import/resolver": {
+			exports: {},
+			node: true,
+		},
 	},
 };
