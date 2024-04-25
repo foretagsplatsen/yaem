@@ -9,7 +9,7 @@
   "author": "finsit",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint --report-unused-disable-directives .",
+    "lint": "eslint --ext js,cjs,mjs --report-unused-disable-directives .",
     "test:run": "vitest",
     "test:open": "vitest --ui"
   },
