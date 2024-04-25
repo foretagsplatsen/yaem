@@ -15,10 +15,10 @@
   },
   "devDependencies": {
     "@foretagsplatsen/eslint-plugin": "^7.0.1",
-    "@vitest/coverage-v8": "^1.5.1",
-    "@vitest/ui": "^1.5.1",
+    "@vitest/coverage-v8": "^1.5.2",
+    "@vitest/ui": "^1.5.2",
     "eslint": "^8.57.0",
     "eslint-import-resolver-exports": "^1.0.0-beta.5",
-    "vitest": "^1.5.1"
+    "vitest": "^1.5.2"
   }
 }
