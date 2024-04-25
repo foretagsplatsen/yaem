@@ -13,6 +13,9 @@ updates:
     registries: "*"
     open-pull-requests-limit: 1000 # we don't want to limit PRs
     schedule:
-      interval: "daily" # runs on every weekday, Monday to Friday
+      interval: "weekly"
+      day: "sunday"
+      time: "19:00"
+      timezone: "Europe/Paris"
     commit-message:
       prefix: "15549487: "
