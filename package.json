@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "@foretagsplatsen/eslint-plugin": "^8.0.0",
-    "@stylistic/eslint-plugin-js": "2.2.0",
     "@vitest/coverage-v8": "^1.6.0",
     "@vitest/ui": "^1.6.0",
     "eslint": "^9.5.0",
