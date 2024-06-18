@@ -1,6 +1,6 @@
-const finsitPlugin = require("@foretagsplatsen/eslint-plugin");
+import finsitPlugin from "@foretagsplatsen/eslint-plugin";
 
-module.exports = [
+export default [
 	...finsitPlugin.configs.main,
 	{ ignores: ["coverage/"] },
 	{
@@ -11,7 +11,7 @@ module.exports = [
 					unusedExports: true,
 					missingExports: true,
 					ignoreExports: [
-						"eslint.config.cjs",
+						"eslint.config.js",
 						"vitest.config.js",
 						".eslintrc.cjs",
 						"index.js",
