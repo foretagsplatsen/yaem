@@ -1,7 +1,7 @@
+import { describe, expect, it, vi } from "vitest";
 import event from "../src/event.js";
 import eventCategory from "../src/eventCategory.js";
 import events from "../src/eventManager.js";
-import { expect, describe, it, vi } from "vitest";
 
 describe("events", () => {
 	it("bind callback to event", () => {
