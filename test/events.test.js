@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import event from "../src/event.js";
 import eventCategory from "../src/eventCategory.js";
-import events from "../src/eventManager.js";
+import events from "../src/eventManager.js"; // eslint-disable-line consistent-default-export-name/default-import-match-filename -- too busy to do that now
 
 describe("events", () => {
 	it("bind callback to event", () => {

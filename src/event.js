@@ -57,10 +57,10 @@ export default function event(spec, my) {
 		 * Remove itself from event, if bound.
 		 */
 		that.unbind = function () {
-			if (that.isBound()) {
-				event.unregister(that);
-				event = undefined;
-			}
+			if (!that.isBound()) return;
+
+			event.unregister(that);
+			event = undefined;
 		};
 
 		/**
@@ -78,9 +78,9 @@ export default function event(spec, my) {
 		 * @param params
 		 */
 		that.execute = function (params) {
-			if (callback) {
-				callback.apply(that, params);
-			}
+			if (!callback) return;
+
+			callback.apply(that, params);
 		};
 
 		/**
