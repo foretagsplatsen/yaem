@@ -9,11 +9,11 @@
 export default function event(spec, my) {
 	my ||= {};
 
-	let bindings = [];
+	const bindings = [];
 
 	// #### Public API
 
-	let that = {};
+	const that = {};
 
 	/**
 	 * Binds callback to event. The callback will be invoked
@@ -39,9 +39,9 @@ export default function event(spec, my) {
 	function eventBinding(spec) {
 		spec ||= {};
 		// eslint-disable-next-line no-shadow -- we should fix that later
-		let that = {};
+		const that = {};
 
-		let callback = spec.callback;
+		const callback = spec.callback;
 		// eslint-disable-next-line no-shadow -- we should fix that later
 		let event = spec.event;
 
@@ -104,7 +104,7 @@ export default function event(spec, my) {
 	 * @returns {eventBinding}
 	 */
 	that.registerOnce = function (callback) {
-		let onceBinding = eventBinding({
+		const onceBinding = eventBinding({
 			callback: function () {
 				my.remove(onceBinding);
 				callback.apply(that, arguments);
@@ -130,7 +130,7 @@ export default function event(spec, my) {
 	 * @param arguments {Object|Object[]} Arguments passed to callback of each binding
 	 */
 	that.trigger = function () {
-		let params = Array.prototype.slice.call(arguments);
+		const params = Array.prototype.slice.call(arguments);
 
 		bindings.forEach((binding) => {
 			binding.execute(params);
