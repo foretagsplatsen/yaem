@@ -16,7 +16,9 @@ const eventManager = (function () {
 	 */
 	that.register = function (name) {
 		if (categories[name]) {
-			throw `A event category is already registered for ${name}`;
+			throw new Error(
+				`A event category is already registered for ${name}`,
+			);
 		}
 		categories[name] = eventCategory();
 
