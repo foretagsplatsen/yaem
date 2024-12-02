@@ -6,8 +6,8 @@ import events from "../src/eventManager.js"; // eslint-disable-line consistent-d
 describe("events", () => {
 	it("bind callback to event", () => {
 		// Arrange: an event
-		let anEvent = event();
-		let spy = vi.fn();
+		const anEvent = event();
+		const spy = vi.fn();
 
 		// Act: bind a callback
 		anEvent.register(spy);
@@ -21,9 +21,9 @@ describe("events", () => {
 
 	it("bind multiple callbacks to an event", () => {
 		// Arrange: an event
-		let anEvent = event();
-		let spy1 = vi.fn();
-		let spy2 = vi.fn();
+		const anEvent = event();
+		const spy1 = vi.fn();
+		const spy2 = vi.fn();
 
 		// Act: bind two callbacks and trigger event
 		anEvent.register(spy1);
@@ -38,9 +38,9 @@ describe("events", () => {
 
 	it("bind same callback only once", () => {
 		// Arrange: an event
-		let anEvent = event();
+		const anEvent = event();
 
-		let spy = vi.fn();
+		const spy = vi.fn();
 
 		// Act: bind two callbacks and trigger event
 		anEvent.register(spy);
@@ -54,9 +54,9 @@ describe("events", () => {
 
 	it("bind same callback with anonymous functions", () => {
 		// Arrange: an event
-		let anEvent = event();
+		const anEvent = event();
 
-		let spy = vi.fn();
+		const spy = vi.fn();
 
 		// Act: bind two callbacks and trigger event
 		anEvent.register(() => {
@@ -75,9 +75,9 @@ describe("events", () => {
 
 	it("trigger pass values to callbacks", () => {
 		// Arrange: an event
-		let anEvent = event();
-		let spy1 = vi.fn();
-		let spy2 = vi.fn();
+		const anEvent = event();
+		const spy1 = vi.fn();
+		const spy2 = vi.fn();
 
 		// Act: bind two callbacks and trigger event
 		anEvent.register(spy1);
@@ -92,11 +92,11 @@ describe("events", () => {
 
 	it("un-Bind callback using unregister", () => {
 		// Arrange: an event
-		let anEvent = event();
-		let spy = vi.fn();
+		const anEvent = event();
+		const spy = vi.fn();
 
 		// bind a callback
-		let eventBinding = anEvent.register(spy);
+		const eventBinding = anEvent.register(spy);
 
 		// unbind
 		anEvent.unregister(eventBinding);
@@ -108,11 +108,11 @@ describe("events", () => {
 
 	it("un-Bind callback using unbind", () => {
 		// Arrange: an event
-		let anEvent = event();
-		let spy = vi.fn();
+		const anEvent = event();
+		const spy = vi.fn();
 
 		// bind a callback
-		let eventBinding = anEvent.register(spy);
+		const eventBinding = anEvent.register(spy);
 
 		// Unbind
 		eventBinding.unbind();
@@ -124,8 +124,8 @@ describe("events", () => {
 
 	it("bind and trigger callback only once using registerOnce", () => {
 		// Arrange: an event
-		let anEvent = event();
-		let spy = vi.fn();
+		const anEvent = event();
+		const spy = vi.fn();
 
 		// Act: bind a callback
 		anEvent.registerOnce(spy);
@@ -139,11 +139,11 @@ describe("events", () => {
 
 	it("event dispose unbinds all callbacks", () => {
 		// Arrange: an event
-		let anEvent = event();
+		const anEvent = event();
 
 		// Act: bind two callbacks and trigger event
-		let firstBinding = anEvent.register(() => {});
-		let secondBinding = anEvent.register(() => {});
+		const firstBinding = anEvent.register(() => {});
+		const secondBinding = anEvent.register(() => {});
 
 		anEvent.dispose();
 
@@ -154,9 +154,9 @@ describe("events", () => {
 
 	it("event Category keeps a list of events", () => {
 		// Act: create an event handler ans some events
-		let someEvents = eventCategory();
-		let anEvent = someEvents.createEvent();
-		let anotherEvent = someEvents.createEvent();
+		const someEvents = eventCategory();
+		const anEvent = someEvents.createEvent();
+		const anotherEvent = someEvents.createEvent();
 
 		// Assert: events created
 		expect(anEvent.register).toBeTruthy();
@@ -165,8 +165,8 @@ describe("events", () => {
 
 	it("event Category can keep named events", () => {
 		// Act: create an event handler ans some events
-		let someEvents = eventCategory();
-		let anEvent = someEvents.createEvent("namedEvent");
+		const someEvents = eventCategory();
+		const anEvent = someEvents.createEvent("namedEvent");
 
 		// Assert: events created
 		expect(anEvent.register).toBeTruthy();
@@ -176,8 +176,8 @@ describe("events", () => {
 		expect.assertions(1);
 
 		// Arrange: an event
-		let someEvents = eventCategory();
-		let anEvent = someEvents.createEvent("namedEvent");
+		const someEvents = eventCategory();
+		const anEvent = someEvents.createEvent("namedEvent");
 
 		// bind a callback
 		someEvents.register("namedEvent", () => {
@@ -190,12 +190,12 @@ describe("events", () => {
 
 	it("event Category can un-bind named event callbacks using unregister", () => {
 		// Arrange: an event
-		let someEvents = eventCategory();
-		let anEvent = someEvents.createEvent("namedEvent");
-		let spy = vi.fn();
+		const someEvents = eventCategory();
+		const anEvent = someEvents.createEvent("namedEvent");
+		const spy = vi.fn();
 
 		// bind a callback
-		let eventBinding = someEvents.register("namedEvent", spy);
+		const eventBinding = someEvents.register("namedEvent", spy);
 
 		// unbind
 		someEvents.unregister("namedEvent", eventBinding);
@@ -207,9 +207,9 @@ describe("events", () => {
 
 	it("event Category can bind and trigger named event callback only once using registerOnce", () => {
 		// Arrange: an event
-		let someEvents = eventCategory();
-		let anEvent = someEvents.createEvent("namedEvent");
-		let spy = vi.fn();
+		const someEvents = eventCategory();
+		const anEvent = someEvents.createEvent("namedEvent");
+		const spy = vi.fn();
 
 		// Act: bind a callback
 		someEvents.registerOnce("namedEvent", spy);
@@ -223,15 +223,15 @@ describe("events", () => {
 
 	it("event Category can bind dispose unbinds all events and there callbacks", () => {
 		// Arrange: two events in a event handler
-		let someEvents = eventCategory();
-		let anEvent = someEvents.createEvent("namedEvent");
-		let anotherEvent = someEvents.createEvent("namedEvent");
+		const someEvents = eventCategory();
+		const anEvent = someEvents.createEvent("namedEvent");
+		const anotherEvent = someEvents.createEvent("namedEvent");
 
 		// Act: bind two callbacks and trigger event
-		let firstBinding = anEvent.register(() => {});
-		let secondBinding = anEvent.register(() => {});
-		let thirdBinding = anotherEvent.register(() => {});
-		let fourthBinding = anotherEvent.register(() => {});
+		const firstBinding = anEvent.register(() => {});
+		const secondBinding = anEvent.register(() => {});
+		const thirdBinding = anotherEvent.register(() => {});
+		const fourthBinding = anotherEvent.register(() => {});
 
 		someEvents.dispose();
 

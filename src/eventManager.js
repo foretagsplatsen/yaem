@@ -4,10 +4,10 @@ import eventCategory from "./eventCategory.js";
  * Singleton object that keeps a list of named event categories.
  */
 const eventManager = (function () {
-	let that = {};
+	const that = {};
 
 	// Map of event categories with (category) name as key
-	let categories = {};
+	const categories = {};
 
 	/**
 	 * Register a new event category with "name".
@@ -16,7 +16,9 @@ const eventManager = (function () {
 	 */
 	that.register = function (name) {
 		if (categories[name]) {
-			throw `A event category is already registered for ${name}`;
+			throw new Error(
+				`A event category is already registered for ${name}`,
+			);
 		}
 		categories[name] = eventCategory();
 

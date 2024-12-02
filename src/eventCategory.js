@@ -4,7 +4,7 @@ import event from "./event.js";
  * Keeps a list of events.
  */
 export default function eventCategory() {
-	let that = {};
+	const that = {};
 
 	// Map of events with name as key
 	let namedEvents = {};
@@ -69,9 +69,9 @@ export default function eventCategory() {
 	 * @param arguments Any arguments to trigger is sent as arguments to callback.
 	 */
 	that.trigger = function (name) {
-		let params = Array.prototype.slice.call(arguments, 1);
+		const params = Array.prototype.slice.call(arguments, 1);
 		// eslint-disable-next-line no-shadow -- we should fix that later
-		let event = ensureEventHolderFor(name);
+		const event = ensureEventHolderFor(name);
 		event.trigger.apply(that, params);
 	};
 
