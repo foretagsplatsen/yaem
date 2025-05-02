@@ -17,7 +17,7 @@
     "@foretagsplatsen/eslint-plugin": "^14.0.0",
     "@vitest/coverage-v8": "^2.1.9",
     "@vitest/ui": "^3.1.2",
-    "eslint": "^9.23.0",
+    "eslint": "^9.25.1",
     "eslint-import-resolver-exports": "^1.0.0-beta.5",
     "vitest": "^2.1.9"
   }
