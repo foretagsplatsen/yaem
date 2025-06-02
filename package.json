@@ -14,11 +14,10 @@
     "test:open": "vitest --ui"
   },
   "devDependencies": {
-    "@foretagsplatsen/eslint-plugin": "^15.0.0",
+    "@foretagsplatsen/eslint-plugin": "^16.0.0-beta.1",
     "@vitest/coverage-v8": "^3.1.4",
     "@vitest/ui": "^3.1.4",
     "eslint": "^9.28.0",
-    "eslint-import-resolver-exports": "^1.0.0-beta.5",
     "vitest": "^3.1.4"
   }
 }
